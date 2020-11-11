@@ -6,6 +6,7 @@
 const express = require('express');
 const route = express.Router();
 
+// IMPORTAÇÃO DE CONTROLLERS
 const homePageController = require('./src/controllers/homePageController')
 
 // CONTROLADOR DE ROTAS
