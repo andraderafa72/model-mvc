@@ -18,13 +18,16 @@ const MongoStorage = require('connect-mongo')(session);
 const flash = require('connect-flash');
 
 // CAMINHOS E ROTAS
-const routes = require('routes');
+const routes = require('./routes');
 const path = require('path');
 
 // SEGURANÇA
 const helmet = require('helmet');
 const csrf = require('csurf');
 app.use(helmet());
+
+// MIDDLEWARES
+const { csrfMiddleware, checkCSRFError } = require('./src/middlewares/globalMiddleware');
 
 // POSTAGEM DE FORMULÁRIO
 app.use(express.urlencoded({ extended: true }));
@@ -53,6 +56,10 @@ app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs'); // engine para renderizar html
 
 app.use(csrf());
+
+// USAR MIDDLEWARES
+app.use(csrfMiddleware);
+app.use(checkCSRFError);
 
 app.use(routes);
 
