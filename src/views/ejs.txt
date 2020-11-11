@@ -1,3 +1,5 @@
+Uso do EJS
+
 <% Controle de Fluxo (if, for)%>
 <%= Imprime escapando caracteres (Texto)%>
 <%- imprime sem escapar caracteres (HTML)%>

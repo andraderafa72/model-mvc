@@ -1,3 +1,5 @@
+// EXECUTADOS AO INICIAR
+
 // GERAR TOKEN AO CARREGAR
 exports.csrfMiddleware = (req, res, next) => {
   res.locals.csrfToken = req.csrfToken();
