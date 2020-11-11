@@ -6,4 +6,10 @@
 const express = require('express');
 const route = express.Router();
 
+const homePageController = require('./src/controllers/homePageController')
+
+// CONTROLADOR DE ROTAS
+route.get('/', homePageController.homePageController);
+route.post('/', homePageController.homePagePost);
+
 module.exports = route;
