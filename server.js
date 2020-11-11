@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.emit('ready'))
-  .catch(e => console.log(e));
+  .catch(e => console.log(`Erro na conexão: ${e}`));
 
 // COOKIES E SALVAMENTOS
 const session = require('express-session');
